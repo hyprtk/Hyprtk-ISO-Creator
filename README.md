@@ -52,6 +52,24 @@ directory.
 `--profile-only --keep-work` is handy for inspecting what went onto the image
 without waiting for a full `mkarchiso` run.
 
+## GUI
+
+There is a GTK 4 front end (`python/`, launcher `hyprtk-iso-creator`) — a short
+wizard over this same builder: choose the source, name/label and output
+locations, toggle the extras, review, then watch the builder's **live output**
+as the ISO is assembled. It runs unprivileged; only the builder (which needs
+root for `mkarchiso`) is elevated, via a `pkexec` helper.
+
+```bash
+bash install.sh          # installs the GUI (venv + ~/.local/bin launchers + desktop entry)
+hyprtk-iso-creator       # launch it
+```
+
+Because the builder reads `airootfs/`, `packages.hyprtk` and `aur-packages.txt`
+relative to this repo, the GUI locates the **checkout** (`$HYPRTK_ISO_ROOT`, a
+walk up from the package, or the path `install.sh` recorded). It is Arch-only,
+like the builder.
+
 ## What the live ISO looks like
 
 - **Live user:** `hyprtk` (password `hyprtk`, passwordless sudo)
@@ -127,6 +145,8 @@ sudo mkfs.ext4 -L hyprtk-persist "${DEV}3"     # nvme/mmcblk use "${DEV}p3"
 hyprtk-iso-builder.sh      # the builder
 packages.hyprtk            # official packages baked into the ISO
 aur-packages.txt           # AUR extras, built on the host
+install.sh                 # installs the optional GTK 4 GUI
+python/                    # the GTK 4 front end (hyprtk_isocreator)
 airootfs/                  # overlay merged onto the releng profile
   etc/sddm.conf.d/         # autologin + Wayland greeter
   etc/sudoers.d/           # live-user passwordless sudo

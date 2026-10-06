@@ -3,6 +3,20 @@
 All notable changes to **Hyprtk-ISO-Creator** are documented in this file.
 Dates are in `YYYY-MM-DD` format.
 
+## [2026-10-06]
+
+### Added
+
+- **A GTK 4 GUI** (`python/hyprtk_isocreator/`, launcher `hyprtk-iso-creator`).
+  It is a short wizard over the same `hyprtk-iso-builder.sh`: choose the dotfiles
+  source, name/label and output locations, toggle the AUR/matuwall/profile-only
+  options, review, then watch the builder's **live output** as the ISO is
+  assembled. The app runs unprivileged; only the builder (which needs root for
+  `mkarchiso`) is elevated, by `hyprtk_isocreator.helper` launched through
+  `pkexec`. Themed from the running hyprtk-bar theme, like the hyprtk-usb GUI.
+  Install with `bash install.sh`; `python/pyproject.toml` packages it and
+  `python/tests/` covers the option/argument and log-parsing logic.
+
 ## [Unreleased] - 2026-09-22
 
 ### Changed
