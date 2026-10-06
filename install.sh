@@ -6,8 +6,9 @@
 #
 # The app builds a venv with system site-packages (so it can see the distro's
 # PyGObject + GTK 4), pip-installs python/ into it, links the launchers into
-# ~/.local/bin, records the checkout path (so the installed app can find
-# hyprtk-iso-builder.sh + its assets), and drops a desktop entry + icon.
+# ~/.local/bin, copies the builder + its profile assets into the state dir (so
+# the installed app is self-contained and does not depend on this checkout
+# surviving), and drops a desktop entry + icon.
 #
 #   bash install.sh
 #
@@ -34,8 +35,18 @@ mkdir -p "$BIN" "$APPS" "$STATE"
 ln -sf "$VENV/bin/hyprtk-iso-creator" "$BIN/hyprtk-iso-creator"
 ln -sf "$VENV/bin/hyprtk-iso-creator-helper" "$BIN/hyprtk-iso-creator-helper"
 
-# Record the checkout so an installed console script can locate the builder.
-printf '%s\n' "$SCRIPT_DIR" > "$STATE/root"
+# Copy the builder + the profile assets it reads (relative to itself) into the
+# state dir, and record that path: the installed app is then self-contained and
+# does not depend on this checkout surviving.
+REPO="$STATE/repo"
+rm -rf "$REPO"
+mkdir -p "$REPO"
+cp -a "$SCRIPT_DIR/hyprtk-iso-builder.sh" \
+      "$SCRIPT_DIR/airootfs" \
+      "$SCRIPT_DIR/packages.hyprtk" \
+      "$SCRIPT_DIR/aur-packages.txt" \
+      "$REPO/"
+printf '%s\n' "$REPO" > "$STATE/root"
 
 # The compositor session's PATH does not include ~/.local/bin (SDDM starts
 # Hyprland without it), so write the entry with absolute Exec/Icon paths.

@@ -67,8 +67,9 @@ hyprtk-iso-creator       # launch it
 
 Because the builder reads `airootfs/`, `packages.hyprtk` and `aur-packages.txt`
 relative to this repo, the GUI locates the **checkout** (`$HYPRTK_ISO_ROOT`, a
-walk up from the package, or the path `install.sh` recorded). It is Arch-only,
-like the builder.
+walk up from the package, or the copy of the builder that `install.sh` places
+under `~/.local/share/hyprtk-iso-creator/repo/`). It is Arch-only, like the
+builder.
 
 ## What the live ISO looks like
 

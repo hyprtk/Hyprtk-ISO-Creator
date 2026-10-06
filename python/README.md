@@ -33,7 +33,8 @@ PYTHONPATH=. python -m hyprtk_isocreator
 - The app needs the **checkout** (not just the script) — the builder reads
   `airootfs/`, `packages.hyprtk` and `aur-packages.txt` from the repo root. The
   app finds it from `$HYPRTK_ISO_ROOT`, by walking up from the package, or from
-  the path `install.sh` recorded.
+  the copy of the builder that `install.sh` places under
+  `~/.local/share/hyprtk-iso-creator/repo/` (recorded in `.../root`).
 - Building requires **Arch Linux** (or an Arch-based host), network access during
   the build, and roughly 15 GB in `/tmp` plus 5-8 GB for the ISO.
 - The wizard exposes every builder flag: source dir, ISO name/label, output dir,

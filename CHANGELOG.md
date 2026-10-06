@@ -17,6 +17,13 @@ Dates are in `YYYY-MM-DD` format.
   Install with `bash install.sh`; `python/pyproject.toml` packages it and
   `python/tests/` covers the option/argument and log-parsing logic.
 
+### Changed
+
+- **`install.sh` is now self-contained.** It copies the builder and the profile
+  assets it reads (`hyprtk-iso-builder.sh`, `airootfs/`, `packages.hyprtk`,
+  `aur-packages.txt`) into `~/.local/share/hyprtk-iso-creator/repo/` and records
+  that path, so the installed app no longer depends on the checkout surviving.
+
 ## [Unreleased] - 2026-09-22
 
 ### Changed

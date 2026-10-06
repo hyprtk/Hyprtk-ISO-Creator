@@ -3,8 +3,9 @@
 The builder is a bash script that reads ``airootfs/``, ``packages.hyprtk`` and
 ``aur-packages.txt`` relative to its own directory, so the GUI and its helper
 need the *repo root*, not just the script. When run from a checkout that is the
-package's ancestor; for an installed console script ``install.sh`` records the
-checkout path under ``~/.local/share/hyprtk-iso-creator/root``.
+package's ancestor; for an installed console script ``install.sh`` copies the
+builder + those assets into ``~/.local/share/hyprtk-iso-creator/repo/`` and
+records that path under ``~/.local/share/hyprtk-iso-creator/root``.
 """
 
 from __future__ import annotations
