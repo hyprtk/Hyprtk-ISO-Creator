@@ -37,9 +37,11 @@ if command -v wal >/dev/null 2>&1; then
 fi
 cp -f "$REPO/assets/Wallpapers/default.png" "$HOME/.cache/current-wallpaper.png" 2>/dev/null || true
 
-# 3. swaylock-effects is AUR-only; if it did not make it onto the image, drop a
-#    plain-swaylock-compatible config so the lock screen still works instead of
-#    erroring on the effects-only options in the shipped config.
+# 3. Locker fallback. hyprlock is the default (installed from the official repo)
+#    and reads its colours from the pywal fragment rendered above. If the AUR
+#    swaylock-effects did not make it onto the image, drop a plain-swaylock
+#    config so the fallback lock screen still works instead of erroring on the
+#    effects-only options in the shipped config.
 if ! pacman -Qq swaylock-effects >/dev/null 2>&1; then
     [ -L "$HOME/.config/swaylock/config" ] && rm -f "$HOME/.config/swaylock/config"
     mkdir -p "$HOME/.config/swaylock"

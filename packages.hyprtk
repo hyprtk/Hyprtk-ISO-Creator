@@ -39,6 +39,10 @@ sddm
 weston
 hyprpicker
 hyprsunset
+hyprlock
+hypridle
+# fallback locker/idle daemon; hyprlock/hypridle (above) are the default and
+# the dotfiles' lock.sh/autostart prefer them.
 swayidle
 # swaylock comes from the AUR swaylock-effects package (see aur-packages.txt);
 # installing the repo swaylock too would conflict on /usr/bin/swaylock.

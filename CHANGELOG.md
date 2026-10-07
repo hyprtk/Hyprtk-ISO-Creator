@@ -3,6 +3,19 @@
 All notable changes to **Hyprtk-ISO-Creator** are documented in this file.
 Dates are in `YYYY-MM-DD` format.
 
+## [2026-10-07]
+
+### Changed
+
+- **`hyprlock` + `hypridle` are now the default locker/idle daemon** (official
+  repos; added to `packages.hyprtk`). The dotfiles' `hypr/scripts/lock.sh` and
+  `hypr/autostart.lua` prefer them and fall back to `swaylock`/`swayidle`,
+  which stay in the image (`swayidle` + AUR `swaylock-effects`) as the fallback.
+  `hyprtk-first-run` keeps its plain-swaylock fallback for when the AUR build
+  is absent. No skel/link changes were needed: `~/.config/hypr` and
+  `~/.config/wal` are already linked wholesale, so `hyprlock.conf`,
+  `hypridle.conf` and the pywal colour fragment ship automatically.
+
 ## [2026-10-06]
 
 ### Added

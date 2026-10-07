@@ -180,7 +180,8 @@ have each package's build dependencies (`--skippgpcheck` skips source PGP
 verification; checksums are still enforced). The visually important extras
 (`swaylock-effects`, `bibata-cursor-theme`, `sddm-theme-sugar-candy-git`) are
 listed out of the box; if they are missing the ISO falls back gracefully
-(plain `swaylock` config, default cursor/SDDM theme).
+(plain `swaylock` config, default cursor/SDDM theme). The default screen
+locker/idle daemon are `hyprlock`/`hypridle` from the official repos.
 
 Disable the stage with `--no-aur` if you want a fully reproducible build from
 the official repos only.
