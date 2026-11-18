@@ -1,3 +1,12 @@
+<div align="center">
+
+<img src="docs/branding/banner.png" alt="Hyprtk-ISO-Creator — part of the hyprtk suite" width="100%" />
+
+[![suite](https://img.shields.io/badge/suite-hyprtk-02DEDE?style=flat-square&labelColor=05060B)](https://github.com/hyprtk)
+[![version](https://img.shields.io/badge/version-0.2.8-FD4FB6?style=flat-square&labelColor=05060B)](CHANGELOG.md)
+
+</div>
+
 # Hyprtk-ISO-Creator
 
 Build a **live Arch Linux ISO with the hyprtk desktop preinstalled and
@@ -196,3 +205,13 @@ the official repos only.
   `~/.cache/hyprtk-iso/aur/<pkg>.log`.
 - `--profile-only` also accepts `ARCHISO_RELENG=/path/to/releng` to use a
   different base profile.
+
+## Branding
+
+<img src="docs/branding/palette.png" alt="hyprtk palette: cyan #02DEDE, magenta #FD4FB6, navy #000044, ink #05060B, white #F2F6FF, muted #8A93A6" width="100%" />
+
+The mark is the suite's **v09** direction: an oversized `ht` monogram on an ink
+field, a gradient ring, and the component glyph in a badge. The wordmark is
+**KoblenzSerial Bold**, converted to outlines so no font install is needed.
+
+Part of the **hyprtk suite** — [dotfiles](https://github.com/hyprtk/dotfiles) · [hyprtk-bar-qt](https://github.com/hyprtk/hyprtk-bar-qt) · [hyprtk-fm](https://github.com/hyprtk/hyprtk-file-manager) · [hyprtk-editor](https://github.com/hyprtk/hyprtk-editor) · [hyprtk-term](https://github.com/hyprtk/hyprtk-term) · [hyprtk-calc](https://github.com/hyprtk/hyprtk-calc) · [config-manager](https://github.com/hyprtk/hyprtk-hyprland-config-manager) · [hyprtk-usb](https://github.com/hyprtk/hyprtk-usb) · [ISO creator](https://github.com/hyprtk/Hyprtk-ISO-Creator)
